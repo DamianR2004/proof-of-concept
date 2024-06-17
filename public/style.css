@@ -1,13 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&display=swap');
 
-
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: "MuseoModerno", sans-serif;
 }
-
 
 :root {
     --background-color: #ffffff;
@@ -46,14 +44,13 @@ body::before {
     }
   }
 
-
 header div:nth-of-type(1) {
 	display:flex;
 	gap:3em;
-    font-size: 2.5vw;
-    justify-content: start;
-    padding: .5em 1em;
-    align-items: center;
+  font-size: 2.5vw;
+  justify-content: start;
+  padding: .5em 1em;
+  align-items: center;
 
     & img{
         height: 5vw;
@@ -64,19 +61,15 @@ header div:nth-of-type(1) {
 details {
 	position:relative;
     cursor: pointer;
-    
-
+  
     & a {
        text-decoration: none;
 
-    
        &:hover{
         cursor: pointer;
-       transform: scale(1.03);
-       transition: .2s ease-in-out;
-    
+        transform: scale(1.03);
+        transition: .2s ease-in-out;
        }
-
     }
 }
 
@@ -101,22 +94,21 @@ nav {
 	top:100%;
 	left:0;
 	display:grid;
-    background-color: #333;
-    padding: .5em 1em;
+  background-color: #333;
+  padding: .5em 1em;
 }
 
 details nav {
 	left: unset;
-    right: 0;
+  right: 0;
 }
 
 .graphbox{
-    padding: 20px;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-gap: 30px;
-    z-index: auto;
-   
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 30px;
+  z-index: auto;
 }
 
 @media (width < 800px) {
@@ -125,49 +117,42 @@ details nav {
     }
 }
     
-
 .hamburger-button{
   position: fixed;
-display:grid;
-grid-template-rows: 1fr min-content;
-place-items:center;
-background: none;
-border: none;
-cursor: pointer;
-width:3.25em;
-aspect-ratio: 1;
-z-index: 5;
+  display:grid;
+  place-items:center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width:3.25em;
+  aspect-ratio: 1;
+  z-index: 5;
+  grid-template-rows: 1fr min-content;
 
-& p{
-  color: var(--text-color);
-  font-size: .75rem;
-}
+  & p{
+    color: var(--text-color);
+    font-size: .75rem;
+  }
 
-
-& span {
-  display: block;
-  width:1.3rem;
-  height:.15rem;
-  transition: .3s;
-  grid-area: 1/1;
-  background-color: var(--text-color);
+  & span {
+    display: block;
+    width:1.3rem;
+    height:.15rem;
+    transition: .3s;
+    grid-area: 1/1;
+    background-color: var(--text-color);
   
   &:nth-of-type(1){
     transform: translateY(-.425rem);
   }
 
-
   &:nth-of-type(3){
     transform: translateY(.425rem);
   }
-
-
 }
 }
 
 .menu-open{
-
-
   &.open span:nth-of-type(1) {
 
 
@@ -209,7 +194,7 @@ z-index: 5;
     
 }
 .menu-open.open .header-list-left{
-    transform: translate(-68% , 0%);
+    transform: translate(-90% , 0%);
     
 }
 

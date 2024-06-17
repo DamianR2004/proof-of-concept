@@ -4,7 +4,7 @@ import fetch from 'node-fetch'
 
 const app = express();
 
-const token = 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImdjbXMtbWFpbi1wcm9kdWN0aW9uIn0.eyJ2ZXJzaW9uIjozLCJpYXQiOjE3MTczNjA5NDksImF1ZCI6WyJodHRwczovL2FwaS1ldS1jZW50cmFsLTEtc2hhcmVkLWV1YzEtMDIuaHlncmFwaC5jb20vdjIvY2x2dzc2ejd0MDBhcTA3dXphaWpmdDEzbi9tYXN0ZXIiLCJtYW5hZ2VtZW50LW5leHQuZ3JhcGhjbXMuY29tIl0sImlzcyI6Imh0dHBzOi8vbWFuYWdlbWVudC1ldS1jZW50cmFsLTEtc2hhcmVkLWV1YzEtMDIuaHlncmFwaC5jb20vIiwic3ViIjoiMDFlZTdhYmQtMGNiOC00ZDU2LTk2Y2ItNDhjNmY4MDJiMjBjIiwianRpIjoiY2x3eTBkOTZxMWpyczA3dzFocTZrY3pjZSJ9.qTeHq3SwGyH8maPdaYCtb68VGecAPOWMZEzJpezo0fxzBEzKHI0IecdSRRXskqYYT3qbkgMqTus9gQF_smxkTK2BMCpm8X62q0U2oTYGGYY6YphO7jxDK2nSk_N_sbx48NvpQCMUpkv3tH_A7je-gHXnROdzgqJFUrbEYsm5kI-Trqey3DsCKaW_HVKC59WsISXjkKirQkPWNpprDh_YKp8HepvN3g8UhHz4agrOlEDZRt0W9PG1OlSYTnOUOsuVHIyJbBiBE9xETCzso52OKRGY3Kt94xXo-9QhCpzvm9fXw2Ueee4g4av15UtoyG8pVoEG8Efbo43pZTdcFkdZMIs9e357CEQ-QmyPQi8yYFvXVr_gS1hPyNr79Da-7bnp_Yh-9QzbohdCkRtKDx3A_xmznVF2ub-Qwkg52VAF7uKP4AeKaQyqbzFwqK-pyZ8QtiPU98Rf8bHb20KaOJvx9OQqbkFll8zessoTa9xR2-0EuafRo9ZIcjPKjje4lklpSvRfVmsCfvPRF707TLHhPwuHwrsUNEZdeS4zhpxDanVqekMq78UkfCVHra1ADltt9s5-kBbMP59vajiwS8-aasLyF5giB-Rp-6wnKE6Xh7uqHw-tlIc5uvUpvhRsL1K4B14v9IlJrwF_9wlfdCho1U6GVk-bOyt-_3jKSkfyqAw'
+const token = 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImdjbXMtbWFpbi1wcm9kdWN0aW9uIn0.eyJ2ZXJzaW9uIjozLCJpYXQiOjE3MTczNjA5NDksImF1ZCI6WyJodHRwczovL2FwaS1ldS1jZW50cmFsLTEtc2hhcmVkLWV1YzEtMDIuaHlncmFwaC5jb20vdjIvY2x2dzc2ejd0MDBhcTA3dXphaWpmdDEzbi9tYXN0ZXIiLCJtYW5hZ2VtZW50LW5leHQuZ3JhcGhjbXMuY29tIl0sImlzcyI6Imh0dHBzOi8vbWFuYWdlbWVudC1ldS1jZW50cmFsLTEtc2hhcmVkLWV1YzEtMDIuaHlncmFwaC5jb20vIiwic3ViIjoiMDFlZTdhYmQtMGNiOC00ZDU2LTk2Y2ItNDhjNmY4MDJiMjBjIiwianRpIjoiY2x3eTBkOTZxMWpyczA3dzFocTZrY3pjZSJ9.qTeHq3SwGyH8maPdaYCtb68VGecAPOWMZEzJpezo0fxzBEzKHI0IecdSRRXskqYYT3qbkgMqTus9gQF_smxkTK2BMCpm8X62q0U2oTYGGYY6YphO7jxDK2nSk_N_sbx48NvpQCMUpkv3tH_A7je-gHXnROdzgqJFUrbEYsm5kI-Trqey3DsCKaW_HVKC59WsISXjkKirQkPWNpprDh_YKp8HepvN3g8UhHz4agrOlEDZRt0W9PG1OlSYTnOUOsuVHIyJbBiBE9xETCzso52OKRGY3Kt94xXo-9QhCpzvm9fXw2Ueee4g4av15UtoyG8pVoEG8Efbo43pZTdcFkdZMIs9e357CEQ-QmyPQi8yYFvXVr_gS1hPyNr79Da-7bnp_Yh-9QzbohdCkRtKDx3A_xmznVF2ub-Qwkg52VAF7uKP4AeKaQyqbzFwqK-pyZ8QtiPU98Rf8bHb20KaOJvx9OQqbkFll8zessoTa9xR2-0EuafRo9ZIcjPKjje4lklpSvRfVmsCfvPRF707TLHhPwuHwrsUNEZdeS4zhpxDanVqekMq78UkfCVHra1ADltt9s5-kBbMP59vajiwS8-aasLyF5giB-Rp-6wnKE6Xh7uqHw-tlIc5uvUpvhRsL1K4B14v9IlJrwF_9wlfdCho1U6GVk-bOyt-_3jKSkfyqAw' /* met deze token heb je toegang tot de api en haar data */
 
 // Importeer de zelfgemaakte functie fetchJson uit de ./helpers map
 import fetchJson from './helpers/fetch-json.js'
@@ -30,15 +30,16 @@ app.listen(app.get('port'), function() {
   console.log(`Application started on http://localhost:${app.get('port')}`)
 })
 
-import { AwesomeGraphQLClient } from 'awesome-graphql-client';
+import { AwesomeGraphQLClient } from 'awesome-graphql-client'; /* nadat je de NPM package van GraphQl hebt gedownload moet je deze ook nog importeren in je server bestand */
 
 const client = new AwesomeGraphQLClient({
-  endpoint:'https://eu-central-1-shared-euc1-02.cdn.hygraph.com/content/clvw76z7t00aq07uzaijft13n/master',
+  endpoint:'https://eu-central-1-shared-euc1-02.cdn.hygraph.com/content/clvw76z7t00aq07uzaijft13n/master',  /* dit is het endpoint van onze api */
   fetch,
   headers: {
-    Authorization: `Bearer ${token}`,
+    Authorization: ` ${token}`, /* hier moet je de token invullen, door middel van een variabele staat hier kortere code */
   },
 });
+
 
 app.get('/', async function(request, response) {
     const employee = `{
@@ -60,9 +61,11 @@ app.get('/', async function(request, response) {
       }`;
     const {employees} = await client.request(employee);
     const {teams} = await client.request(team); 
-    //console.log(teams[0].employees);
+    
+      /* hier moet je de query elementen omzetten in een variabele */
+
     response.render('index', {employees, teams});    
-    // Pass the employees data to the view
+   /* hiermee kan je de data van employees en teams brengen naar je index.ejs bestand */
 });
 
 app.get('/employees', async function(request, response) {
