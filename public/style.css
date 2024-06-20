@@ -8,15 +8,15 @@
 }
 
 :root {
-  --text-color: #140B0B;
-  --gecko-color: #9fc798;
-  --cheetah-color: #F3EA9C;
-  --pelican-color: #A4C8E9;
-  --header1-text: 55px;
-  --header2-text: 45px;
-  --header3-text: 32px;
-  --header4-text: 20px;
-  --background-color: #ffffff;
+    --background-color: #ffffff;
+    --text-color: #140B0B;
+    --gecko-color: #9fc798;
+    --cheetah-color: #F3EA9C;
+    --pelican-color: #A4C8E9;
+    --header1-text: 55px;
+    --header2-text: 45px;
+    --header3-text: 32px;
+    --header4-text: 20px;
 }
   
 
@@ -53,7 +53,7 @@ header div:nth-of-type(1) {
   align-items: center;
 
    & img{
-        height: 5vw;
+     height: 5vw;
     }
 }
 
@@ -64,13 +64,13 @@ details {
     & a {
        text-decoration: none;
 
-      &:hover{
-      cursor: pointer;
-      transform: scale(1.03);
-      transition: .2s ease-in-out;
+       &:hover{
+        cursor: pointer;
+       transform: scale(1.03);
+       transition: .2s ease-in-out;
+       }
     }
-  }
-}
+ }
 
 .project-name a{
     color: var(--background-color);
@@ -182,11 +182,7 @@ details nav {
   bottom: 0;
   left: 0;
   list-style-type: "";
-
   width:100%;
-  /* max-width:32em; */
-  /* width:min(100%, 20em); */
-
   padding: 2rem;
   z-index:  1;
 }
@@ -211,8 +207,6 @@ details nav {
   justify-content: center;
   font-size: 4vw;
 }
-
-
 
 .employee-filter{
   display: flex;
