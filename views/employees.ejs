@@ -3,7 +3,7 @@
 <script defer src="./script.js"></script>
 
 <h1 class="employees-header">Employees</h1>
-    <article class="employee-filter">
+    <div class="employee-filter">
         <form action="/employees" id="team-employee-filter">
             <label for="common-employee-filter">Sorteer op:</label>
                 <select name="common-employee-filter" id="common-employee-filter">
@@ -26,7 +26,7 @@
                 <input type="search" id="search-employee" name="q"/>
             <button>Zoek</button>
         </form>
-</article>
+    </div>
 
     <div class="employee-cards">
         <% employees.forEach(employee =>{ %>
