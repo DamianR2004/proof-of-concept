@@ -2,7 +2,7 @@
 
 <script defer src="./script.js"></script>
 
-<article class="graphbox">
+<div class="graphbox">
   <div class="box">
     <canvas id="ProductivityChart"  data-datasets="<%= teams.map(function(team) { return team.productivity }) %>" data-labels="<%= teams.map(function(team) { return team.name }) %>"></canvas>
   </div>
@@ -14,7 +14,7 @@
   <div class="box">
     <canvas id="SickdaysChart" data-sickdaysdata="<%= teams.map(function(team) { let total = 0; team.employees.forEach(function(employee) { total+= employee.sickdays }); return total; }) %>" data-labels="<%= teams.map(function(team) { return team.name }) %>"></canvas>
   </div>
-</article>
+</div>
 
 
 <%- include('./partials/foot') %>
