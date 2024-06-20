@@ -74,10 +74,25 @@ app.get('/employees', async function(request, response) {
         sickdays
         name
         productivity
+        cupsOfCoffee
         id
+        team {
+          name
+          colors {
+            hex
+          }
+        }
+        avatar {
+          url
+        }
       }
     }`;
 
+    
+
     const {employees} = await client.request(employee);
+
+    console.log(request.query.q)
+
     response.render('employees', {employees}); 
   });

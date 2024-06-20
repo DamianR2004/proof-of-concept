@@ -96,3 +96,23 @@ function openMenu() {
 }
 
 menuButton.addEventListener("click", openMenu);
+
+document.addEventListener('DOMContentLoaded', () => {
+  const employeeCards = document.querySelectorAll('.employee-card-details');
+  
+  employeeCards.forEach(card => {
+    let team = card.getAttribute('data-team');
+    
+    // Normalize the team name to lowercase
+    team = team.toLowerCase();
+
+    if (team === 'cheetah') {
+      card.style.borderColor = 'orange';
+    } else if (team === 'pelican') {
+      card.style.borderColor = 'blue';
+    } else if (team === 'gecko') {
+      card.style.borderColor = 'green';
+    }
+
+  });
+});

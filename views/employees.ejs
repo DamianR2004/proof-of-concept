@@ -1,47 +1,43 @@
 <%- include('./partials/top') %>
 
+<script defer src="./script.js"></script>
 
-<h1>Employees</h1>
+<h1 class="employees-header">Employees</h1>
+    <article class="employee-filter">
+        <form action="/employees" id="team-employee-filter">
+            <label for="common-employee-filter">Sorteer op:</label>
+                <select name="common-employee-filter" id="common-employee-filter">
+                    <option value="none">-</option>
+                    <option value="name-down">Naam ↓</option>
+                    <option value="sickdays">Ziektedagen</option>
+                    <option value="productivity">Productiviteit</option>
+                    <option value="name-up">Naam ↑</option>
+                </select>
 
-    <form action="" id="common-employee-filter">
-        <label for="common-employee-filter">Sorteer op:</label>
-            <select name="common-employee-filter" id="common-employee-filter">
-                <option value="none">-</option>
-                <option value="name-up">Naam ↑</option>
-                <option value="name-down">Naam ↓</option>
-                <option value="sickdays">Ziektedagen</option>
-                <option value="productivity">Productiviteit</option>
-            </select>
-     </form>    
+            <label for="team-employee-filter">Team:</label>
+                <select name="team-employee-filter id="team-employee-filter">
+                    <option value="none">-</option>
+                    <option value="gecko">Gecko</option>
+                    <option value="cheetah">Cheetah</option>
+                    <option value="pelican">Pelican</option>
+                </select>
 
-
-
-    <form action="" id="team-employee-filter">
-        <label for="team-employee-filter">Team:</label>
-            <select name="team-employee-filter id="team-employee-filter">
-                <option value="none">-</option>
-                <option value="gecko">Gecko</option>
-                <option value="cheetah">Cheetah</option>
-                <option value="pelican">Pelican</option>
-            </select>
-    </form>
-
-
-    <form action="" id="search-employee">
-        <label for="search-employee">Zoek een medewerker</label>
-            <input type="search" id="search-employee"  />
+            <label for="search-employee"></label>
+                <input type="search" id="search-employee" name="q"/>
             <button>Zoek</button>
-    </form>
+        </form>
+</article>
 
-
-    <% employees.forEach(employee =>{ %>
-        <article class="employee-card">
-          <ul class="employee-card-details">
-            <li><p><%=employee.name %></p></li>
-            <li><p><%=employee.sickdays %></p></li>
-            <li><p><%=employee.productivity %></p></li>
+    <div class="employee-cards">
+        <% employees.forEach(employee =>{ %>
+          <ul class="employee-card-details" data-team="<%= employee.team %>">
+            <li><img src="<%=employee.avatar.url %>" alt=""></li>
+            <li><h2><%=employee.name %></h2></li>
+            <li><p>Ziektedagen: <%=employee.sickdays %></p></li>
+            <li><p>Productiviteit: <%=employee.productivity %></p></li>
+            <li><p>Cups Of Coffee: <%=employee.cupsOfCoffee %></p></li>
           </ul>
-        </article>
         <% }); %>
+    </div>
 
 <%- include('./partials/foot') %>
